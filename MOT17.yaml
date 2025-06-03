@@ -1,0 +1,6 @@
+train: ../Progetto-Finale-Machine-Learning/yolo/images/train
+val: ../Progetto-Finale-Machine-Learning/yolo/images/val
+
+nc: 3
+
+names: [ 'Pedestrian', 'Occupant', 'Stationary Person' ]

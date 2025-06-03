@@ -93,7 +93,7 @@ def convert_mot_to_yolo_single_folder(dataset_root, output_root, objectToFilter,
     val_images_output = os.path.join(output_root, 'images', 'val')
     labels_output = os.path.join(output_root, 'labels', 'train')
     val_labels_output = os.path.join(output_root, 'labels', 'val')
-
+    switch = {1:0, 2:1, 7:2} #da rendere generale
     os.makedirs(images_output, exist_ok=True)
     os.makedirs(labels_output, exist_ok=True)
     os.makedirs(val_labels_output, exist_ok=True)
@@ -115,7 +115,7 @@ def convert_mot_to_yolo_single_folder(dataset_root, output_root, objectToFilter,
         df.columns = ['frame', 'id', 'x', 'y', 'w', 'h', 'conf', 'class', 'vis']
 
         df = df[(df['class'].isin([object.value for object in objectToFilter])) & (df['vis'] > visibility_threshold)]
-
+         
         for _, row in df.iterrows():
             frame_id = int(row['frame'])
             image_name = f"{frame_id:06d}.jpg"
@@ -136,10 +136,12 @@ def convert_mot_to_yolo_single_folder(dataset_root, output_root, objectToFilter,
             y_center = (row['y'] + row['h'] / 2) / img_size[1]
             w = row['w'] / img_size[0]
             h = row['h'] / img_size[1]
-
+            class_label = switch.get(int(row["class"]))
+            
             label_path = os.path.join(labels_output, new_label_name) if seq!= video_for_val else os.path.join(val_labels_output, new_label_name)
+            
             with open(label_path, 'a') as f:
-                f.write(f"{int(row['class'])} {x_center:.6f} {y_center:.6f} {w:.6f} {h:.6f}\n")
+                f.write(f"{class_label} {x_center:.6f} {y_center:.6f} {w:.6f} {h:.6f}\n")
 
     print("Conversion completed!")
 
