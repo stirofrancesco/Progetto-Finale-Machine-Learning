@@ -100,7 +100,7 @@ def convert_mot_to_yolo_single_folder(dataset_root, output_root, objectToFilter,
     os.makedirs(val_images_output, exist_ok=True)
     
     sequences = [seq for seq in os.listdir(dataset_root) if (os.path.isdir(os.path.join(dataset_root, seq)) and DIR_SELECTOR in seq) ]
-
+    print(img_size[1])
     for seq in sequences:
         print(f"Processing sequence: {seq}")
         seq_path = os.path.join(dataset_root, seq)
@@ -131,11 +131,21 @@ def convert_mot_to_yolo_single_folder(dataset_root, output_root, objectToFilter,
                 except FileNotFoundError:
                     print(f"Missing image: {image_src_path}")
                     continue
-        
+            if(row['x'] <0 or row['y']<0 or row['w']<0 or row['h']<0):
+                continue  
+            if(((row['x'] + row['w'] / 2) / img_size[0] )> 1 or ((row['y'] + row['h'] / 2) / img_size[1]) > 1):
+                continue
             x_center = (row['x'] + row['w'] / 2) / img_size[0]
             y_center = (row['y'] + row['h'] / 2) / img_size[1]
-            w = row['w'] / img_size[0]
-            h = row['h'] / img_size[1]
+            middlew= row["w"]
+            middleh= row["h"]
+            if(row["x"]+middlew>img_size[0]):
+                middlew = img_size[0]-row["x"]
+            if(row["y"]+middleh>img_size[1]):
+                middleh = img_size[1]-row["y"]
+
+            w = middlew / img_size[0]   
+            h = middleh / img_size[1]
             class_label = switch.get(int(row["class"]))
             
             label_path = os.path.join(labels_output, new_label_name) if seq!= video_for_val else os.path.join(val_labels_output, new_label_name)
