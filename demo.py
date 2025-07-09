@@ -430,7 +430,7 @@ frame_predit.pack(side="bottom", fill="both", expand=True)
 
 
 ''' Menù a tendina per selezionare i pesi con cui fare la prediction '''
-opzioni = ["Yolo12n", "Yolo12s"]
+opzioni = ["Yolo12n", "Yolo12s", "Yolo12m"]
 opzione_selezionata = tk.StringVar(finestra)
 opzione_selezionata.set(opzioni[1])
 combo = ttk.Combobox(frame_top, textvariable=opzione_selezionata, values=opzioni, font=("Helvetica", 16), width=20, state="readonly")
