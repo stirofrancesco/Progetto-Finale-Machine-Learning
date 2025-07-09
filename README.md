@@ -21,6 +21,7 @@ This project aims to detect and count people in video frames using the YOLOv12 o
 │   ├──__init__.py
 │   ├──confusion_matrix_for_yolo.py
 │   ├──crowd-human-to-yolo.py
+│   ├──generate_heatmap.py
 │   ├──mot_to_yolo.py
 │   ├──predict_for_gui.py
 │   ├──test.py
