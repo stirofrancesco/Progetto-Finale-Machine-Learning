@@ -163,9 +163,3 @@ M.Sc.student - Computer Science
 **Mario Toscano**  
 M.Sc.student - Computer Science
 
-
----
-
-## 📜 License
-
-This project is released under the MIT License.
