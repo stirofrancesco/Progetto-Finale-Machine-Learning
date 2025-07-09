@@ -158,6 +158,9 @@ If you encounter issues downloading the dataset due to a gdown library error, yo
 
 [Download here!](https://drive.google.com/file/d/1k_JR4RL_mllyjej5SDtWzqFtr9aNSbJ4/view?usp=sharing)
 
+You can also find the repository on Roboflow, but the ground truth (GT) is not available for all the frames in the video_test folder. Here's the link to the dataset:
+
+[Roboflow dataset](https://app.roboflow.com/mario-toscano-xzywr/dataset-lgnh2/2)
 ---
 
 ## 📬 Contact
