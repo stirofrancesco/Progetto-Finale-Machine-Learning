@@ -28,7 +28,6 @@ def sahi_prediction(model_path, frame, slice_height = 640, slice_width = 640):
             ]
     for det in detection_data:
         annotator.box_label(det[1], label="", color =(255, 0, 0))
-    print("qui")
 
     text = "persone" if (len(detection_data))>1 else "persona"
     img = create_labels_on_image(annotator.result(),f"{len(detection_data)} {text}")
@@ -39,11 +38,9 @@ def sahi_prediction(model_path, frame, slice_height = 640, slice_width = 640):
 
 def yolo_prediction(model_path, frame):
     model = YOLO(model_path)
-    print("Originale:", frame.size)
     results = model.predict(source=frame,show= False , save = False , conf = CONF ,show_labels = False, show_conf = False, line_width = 1)
     img = results[0].orig_img.copy()  
     boxes = results[0].boxes  
-    print("yolo:", img.size)
     h, w = frame.shape[:2]
     for box in boxes:
         xyxy = box.xyxy[0].int().tolist() 

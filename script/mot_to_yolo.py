@@ -15,8 +15,10 @@ from utils import clamp, create_dataset_structure
 import cv2
 from tqdm import tqdm
 
-MOT_DATASET_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','Mot_raw')
-OUTPUT_YOLO_DATASET = os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','dataset')
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+MOT_DATASET_ROOT = os.path.join(script_dir,'..','Mot_raw')
+OUTPUT_YOLO_DATASET = os.path.join(script_dir,'..','dataset')
 
 class Object_GT_Code(Enum):
     """

@@ -45,8 +45,8 @@ def create_dataset_structure(dataset_dir):
     os.makedirs(val_dir_labels, exist_ok=True)
     return train_dir_images, train_dir_labels, val_dir_images, val_dir_labels
 
-''' Used to print labels on Image '''
 
+''' Used to print labels on Image '''
 def create_labels_on_image(img, txt):
     
     h, w, _ = img.shape
@@ -86,8 +86,8 @@ def create_labels_on_image(img, txt):
 
     return img
 
-''' Used to print the bbox on Image '''
 
+''' Used to print the bbox on Image '''
 def draw_gt(frame, gt, class_colors=None):
 
     img = np.array(frame)

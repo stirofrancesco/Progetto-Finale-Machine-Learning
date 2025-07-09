@@ -5,8 +5,10 @@ import scipy.io
 import numpy as np
 from utils import create_dataset_structure
 
-INPUT_CUHK_DATASET = os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','CHUK_dataset')    
-OUTPUT_YOLO_DATASET = os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','dataset2')
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+INPUT_CUHK_DATASET = os.path.join(script_dir,'..','CHUK_dataset')    
+OUTPUT_YOLO_DATASET = os.path.join(script_dir,'..','dataset')
 
 def get_frame_count(video_path):
     cap = cv2.VideoCapture(video_path)
