@@ -1,10 +1,12 @@
 import gdown
 import zipfile
 import os
+       
+
 
 url = "https://drive.google.com/uc?id=1k_JR4RL_mllyjej5SDtWzqFtr9aNSbJ4"  
 zip_path = "dataset.zip"
-extract_folder = "dataset"
+extract_folder = "."
 
 gdown.download(url, zip_path, quiet=False)
 
