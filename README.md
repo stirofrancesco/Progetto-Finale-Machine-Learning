@@ -9,7 +9,7 @@ This project aims to detect and count people in video frames using the YOLOv12 o
 ## 📁 Project Structure
 
 ```
-├── script/
+├── script/                                 #contain the python script
 │   ├── _pycache_/     
 │   ├── gui_utils/              
 │   │   ├── cache/
@@ -27,24 +27,25 @@ This project aims to detect and count people in video frames using the YOLOv12 o
 │   ├──training.py
 │   ├──utils.py
 │   └──yolo11n.pt
-├───test_result
+├───test_result                       #contain the valutation on test set
 │   ├───our_yolo_m
 │   ├───our_yolo_n
 │   ├───our_yolo_s
 │   ├───yolo_m
 │   ├───yolo_n
 │   └───yolo_s
-├───training_result
+├───training_result                  #containt the result on training 
 │   ├───Yolo12m
 │   │   └───weights
 │   ├───Yolo12n
 │   │   └───weights
 │   └───Yolo12s
 │       └───weights
-└───video_test
-├───demo.mp4
-├───demo.py
-└───requirements.txt
+└───video_test                      #contain video for testing 
+├───demo.mp4                        #short video that explain how to use the app
+├───demo.py                         #app that allow you to do inference
+├───download_dataset.py             #script that allow you to download the dataset
+└───requirements.txt                #requirements
 ```
 
 ---
