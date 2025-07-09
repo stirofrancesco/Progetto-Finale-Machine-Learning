@@ -150,6 +150,9 @@ Download the dataset:
 ```bash
 python download_dataset.py
 ```
+If you encounter issues downloading the dataset due to a gdown library error, you can manually download the dataset.zip file from Google Drive using the following link:
+
+[Download here!](https://drive.google.com/file/d/1k_JR4RL_mllyjej5SDtWzqFtr9aNSbJ4/view?usp=sharing)
 
 ---
 
