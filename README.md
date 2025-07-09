@@ -139,6 +139,7 @@ Output will include:
 ---
 
 ## 🧪 Requirements
+Make sure you are in the root directory of the repository before executing this command.
 
 Install dependencies:
 
