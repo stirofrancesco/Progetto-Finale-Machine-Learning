@@ -45,6 +45,8 @@ This project aims to detect and count people in video frames using the YOLOv12 o
 ├───demo.mp4                        #short video that explains how to use the app
 ├───demo.py                         #app that allows you to do inference
 ├───download_dataset.py             #script that allows you to download the dataset
+├───Relazione_finale_ML.doc         #final relation of the project in doc format
+├───Relazione_finale_ML.pdf         #final relation of the project in pdf format
 └───requirements.txt                #contains the dependencies
 ```
 
