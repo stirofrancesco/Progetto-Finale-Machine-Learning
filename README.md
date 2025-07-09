@@ -41,7 +41,7 @@ This project aims to detect and count people in video frames using the YOLOv12 o
 │   │   └───weights
 │   └───Yolo12s
 │       └───weights
-└───video_test                      #contains video for testing 
+├───video_test                      #contains video for testing 
 ├───demo.mp4                        #short video that explains how to use the app
 ├───demo.py                         #app that allows you to do inference
 ├───download_dataset.py             #script that allows you to download the dataset
